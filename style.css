@@ -1,0 +1,120 @@
+/* Basic reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  line-height: 1.6;
+  background-color: #f4f4f5;
+  color: #111827;
+}
+
+a {
+  color: #2563eb;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.container {
+  width: min(900px, 100% - 2rem);
+  margin: 0 auto;
+}
+
+/* Header */
+header {
+  background-color: #111827;
+  color: #f9fafb;
+  padding: 1rem 0;
+}
+
+header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 1.3rem;
+}
+
+nav a {
+  margin-left: 1rem;
+  font-size: 0.95rem;
+  color: #e5e7eb;
+}
+
+nav a:hover {
+  color: #ffffff;
+}
+
+/* Hero */
+.hero {
+  background-color: #e5e7eb;
+  padding: 3rem 0;
+  text-align: center;
+}
+
+.hero h2 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Sections */
+.section {
+  padding: 2.5rem 0;
+}
+
+.section.alt {
+  background-color: #ffffff;
+}
+
+.section h2 {
+  margin-bottom: 1rem;
+}
+
+/* Projects */
+.project {
+  border: 1px solid #d4d4d8;
+  background-color: #fafafa;
+  padding: 1rem;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+}
+
+.project h3 {
+  margin-bottom: 0.5rem;
+}
+
+.project p {
+  margin-bottom: 0.5rem;
+}
+
+/* Footer */
+footer {
+  background-color: #111827;
+  color: #e5e7eb;
+  padding: 1rem 0;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+/* Small screens */
+@media (max-width: 600px) {
+  header .container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  nav a {
+    margin-left: 0;
+    margin-right: 0.75rem;
+  }
+}
