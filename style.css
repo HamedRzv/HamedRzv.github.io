@@ -1,120 +1,343 @@
-/* Basic reset */
+/* ===========================
+   Global Settings & Variables
+   =========================== */
+:root {
+  --bg: #020617;
+  --bg-alt: #020818;
+  --surface: #020617;
+  --surface-soft: #0b1220;
+  --accent: #38bdf8;
+  --accent-soft: rgba(56, 189, 248, 0.1);
+  --accent-strong: #0ea5e9;
+  --text: #e5e7eb;
+  --text-soft: #9ca3af;
+  --border-subtle: #1f2937;
+  --radius-lg: 14px;
+  --radius-xl: 22px;
+  --shadow-soft: 0 18px 40px rgba(15, 23, 42, 0.7);
+  --shadow-card: 0 14px 35px rgba(15, 23, 42, 0.7);
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
     sans-serif;
-  line-height: 1.6;
-  background-color: #f4f4f5;
-  color: #111827;
+  line-height: 1.7;
+  color: var(--text);
+  background:
+    radial-gradient(circle at top, #1e293b 0, #020617 40%, #000 100%);
 }
 
-a {
-  color: #2563eb;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
+/* Shared layout helper */
 .container {
-  width: min(900px, 100% - 2rem);
+  width: min(980px, 100% - 2.5rem);
   margin: 0 auto;
 }
 
-/* Header */
+/* ===========================
+   Header & Navigation
+   =========================== */
 header {
-  background-color: #111827;
-  color: #f9fafb;
-  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: linear-gradient(
+    to bottom,
+    rgba(2, 6, 23, 0.98),
+    rgba(2, 6, 23, 0.93),
+    rgba(2, 6, 23, 0.6),
+    transparent
+  );
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(30, 64, 175, 0.5);
 }
 
 header .container {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 0.75rem 0;
 }
 
+/* “Logo” / Name */
 .logo {
-  font-size: 1.3rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.logo::before {
+  content: "HR";
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 999px;
+  background: radial-gradient(circle at top left, #1d4ed8, #020617);
+  color: var(--accent);
+  font-size: 0.8rem;
+  border: 1px solid rgba(148, 163, 184, 0.9);
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.8);
+}
+
+/* Nav links */
+nav {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.88rem;
 }
 
 nav a {
-  margin-left: 1rem;
-  font-size: 0.95rem;
-  color: #e5e7eb;
+  position: relative;
+  color: var(--text-soft);
+  text-decoration: none;
+  padding: 0.3rem 0.15rem;
+  transition: color 0.2s ease, transform 0.15s ease;
+}
+
+/* Underline hover */
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.15rem;
+  width: 0%;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(to right, var(--accent), var(--accent-strong));
+  transition: width 0.2s ease;
 }
 
 nav a:hover {
-  color: #ffffff;
+  color: #f9fafb;
+  transform: translateY(-1px);
 }
 
-/* Hero */
+nav a:hover::after {
+  width: 100%;
+}
+
+/* ===========================
+   Hero Section
+   =========================== */
 .hero {
-  background-color: #e5e7eb;
-  padding: 3rem 0;
-  text-align: center;
+  padding: 3.5rem 0 2.8rem;
+}
+
+.hero .container {
+  text-align: left;
 }
 
 .hero h2 {
-  font-size: 1.8rem;
-  margin-bottom: 0.5rem;
+  font-size: clamp(2.1rem, 3vw, 2.6rem);
+  margin-bottom: 0.8rem;
+  letter-spacing: 0.02em;
 }
 
-/* Sections */
+.hero p {
+  max-width: 36rem;
+  color: var(--text-soft);
+}
+
+/* ===========================
+   Sections
+   =========================== */
 .section {
-  padding: 2.5rem 0;
+  padding: 2.8rem 0;
 }
 
 .section.alt {
-  background-color: #ffffff;
+  background: radial-gradient(circle at top left, #020617, #02081a 55%);
 }
 
 .section h2 {
+  font-size: 1.5rem;
   margin-bottom: 1rem;
 }
 
-/* Projects */
+/* ===========================
+   Project / Card Blocks
+   =========================== */
 .project {
-  border: 1px solid #d4d4d8;
-  background-color: #fafafa;
-  padding: 1rem;
-  border-radius: 6px;
-  margin-bottom: 1rem;
+  background: radial-gradient(circle at top, #020617, #020617 60%);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-subtle);
+  padding: 1.15rem 1.2rem;
+  margin-bottom: 1.1rem;
+  box-shadow: var(--shadow-card);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.18s ease, box-shadow 0.18s ease,
+    border-color 0.18s ease, background 0.18s ease;
+}
+
+/* Accent glow on cards */
+.project::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at top right,
+    rgba(56, 189, 248, 0.16),
+    transparent 55%
+  );
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  pointer-events: none;
+}
+
+.project:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 45px rgba(15, 23, 42, 0.9);
+  border-color: rgba(56, 189, 248, 0.55);
+  background: radial-gradient(circle at top, #020617, #020617 50%);
+}
+
+.project:hover::before {
+  opacity: 1;
 }
 
 .project h3 {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.4rem;
+  font-size: 1.05rem;
 }
 
 .project p {
-  margin-bottom: 0.5rem;
+  font-size: 0.92rem;
+  color: var(--text-soft);
 }
 
-/* Footer */
-footer {
-  background-color: #111827;
+.project p + p {
+  margin-top: 0.3rem;
+}
+
+/* Highlighted keywords */
+.project strong {
+  color: var(--accent-strong);
+}
+
+/* ===========================
+   Typography & Links
+   =========================== */
+h1,
+h2,
+h3 {
   color: #e5e7eb;
-  padding: 1rem 0;
-  text-align: center;
+}
+
+p {
+  font-size: 0.96rem;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.18s ease, text-shadow 0.18s ease;
+}
+
+a:hover {
+  text-decoration: underline;
+  text-shadow: 0 0 12px rgba(56, 189, 248, 0.5);
+}
+
+/* ===========================
+   Contact Section
+   =========================== */
+#contact p {
+  margin-bottom: 0.35rem;
+}
+
+/* ===========================
+   Footer
+   =========================== */
+footer {
+  background: linear-gradient(to top, #020617, transparent);
+  border-top: 1px solid var(--border-subtle);
+  padding: 1rem 0 1.4rem;
   margin-top: 2rem;
 }
 
-/* Small screens */
-@media (max-width: 600px) {
+footer .container {
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--text-soft);
+}
+
+/* ===========================
+   “Scroll to Section” offset trick (optional)
+   =========================== */
+/* Give sections a bit of breathing room when navigated via anchor */
+section[id] {
+  scroll-margin-top: 4.5rem;
+}
+
+/* ===========================
+   Subtle Fade-in Animation
+   =========================== */
+.section,
+.hero {
+  animation: fadeUp 0.6s ease-out;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===========================
+   Responsive Design
+   =========================== */
+@media (max-width: 780px) {
   header .container {
     flex-direction: column;
     align-items: flex-start;
     gap: 0.5rem;
   }
 
-  nav a {
-    margin-left: 0;
-    margin-right: 0.75rem;
+  nav {
+    flex-wrap: wrap;
+    gap: 0.6rem;
+  }
+
+  .hero .container {
+    text-align: left;
+  }
+
+  .hero {
+    padding-top: 3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  nav {
+    font-size: 0.82rem;
+  }
+
+  .logo {
+    font-size: 1rem;
+  }
+
+  .project {
+    padding: 1rem;
   }
 }
