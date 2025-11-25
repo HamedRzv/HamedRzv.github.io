@@ -8,10 +8,12 @@
 </head>
 
 <body>
+
   <!-- HEADER -->
   <header>
     <div class="container">
-      <h1 class="logo">Hamed Razavi</h1>
+      <h1 class="logo">Hamed (Hem) Razavi</h1>
+
       <nav>
         <a href="#about">About</a>
         <a href="#skills">Skills</a>
@@ -19,17 +21,28 @@
         <a href="#projects">Projects</a>
         <a href="#contact">Contact</a>
       </nav>
+
+      <!-- SOCIAL ICONS -->
+      <div class="social-icons">
+        <a class="icon-gh" href="https://github.com/HamedRzv" target="_blank" aria-label="GitHub"></a>
+        <a class="icon-li" href="YOUR_LINKEDIN_URL" target="_blank" aria-label="LinkedIn"></a>
+        <a class="icon-mail" href="mailto:youremail@example.com" aria-label="Email"></a>
+      </div>
     </div>
   </header>
 
   <!-- HERO -->
   <section class="hero">
     <div class="container">
+      <span class="hero-kicker">Data · Machine Learning · NLP</span>
       <h2>Data Analyst · Machine Learning · NLP</h2>
+
       <p>
         Data professional with experience in Python, SQL, analytics, machine learning,
         visualization, and automated data pipelines.
       </p>
+
+      <div class="hero-underline"></div>
     </div>
   </section>
 
@@ -45,9 +58,9 @@
       </p>
       <p>
         I currently work as a <strong>Data Extraction and Management Consultant</strong> at
-        the University of Illinois System. In this role, I build automated pipelines,
-        integrate multiple data sources, analyze large datasets, and create dashboards
-        that deliver clear and actionable insights.
+        the University of Illinois System. I build automated pipelines, integrate multiple
+        data sources, analyze large datasets, and create dashboards that deliver clear
+        and actionable insights.
       </p>
       <p>
         I specialize in Python, SQL, Power BI, NLP, and machine learning, and I enjoy
@@ -83,13 +96,14 @@
         <h3>Tools & Technologies</h3>
         <p>pandas, NumPy, scikit-learn, Jupyter, Git, JSON, REST APIs</p>
       </div>
+
     </div>
   </section>
 
   <!-- EXPERIENCE -->
   <section id="experience" class="section">
     <div class="container">
-      <h2>Professional Experience</h2>
+      <h2>Experience</h2>
 
       <div class="project">
         <h3>Data Extraction & Management Consultant</h3>
@@ -104,10 +118,10 @@
       </div>
 
       <div class="project">
-        <h3>Graduate Teaching Assistant (Calculus – MATH 220)</h3>
+        <h3>Graduate Teaching Assistant (MATH 220 – Calculus)</h3>
         <p><strong>University of Illinois Urbana-Champaign</strong></p>
         <p>
-          Taught problem-solving sessions, supported course instruction, and assisted
+          Led problem-solving sessions, supported course instruction, and assisted
           students with quantitative reasoning and analytical methods.
         </p>
       </div>
@@ -128,7 +142,7 @@
       <h2>Projects</h2>
 
       <div class="project">
-        <h3>Automated Data Pipeline for Multi-Source Data Integration</h3>
+        <h3>Automated Data Pipeline for Multi-Source Integration</h3>
         <p>
           Developed a Python-based pipeline to extract, clean, and merge datasets from
           APIs, PDFs, websites, and structured files. Implemented automation to reduce
@@ -138,60 +152,89 @@
       </div>
 
       <div class="project">
-        <h3>Machine Learning Models for Classification & Prediction</h3>
+        <h3>Machine Learning Models for Prediction</h3>
         <p>
-          Built and evaluated ML models (logistic regression, random forest, SVM,
-          gradient boosting) for prediction and classification tasks. Applied feature
-          engineering, hyperparameter tuning, and model evaluation.
+          Built and evaluated ML models including logistic regression, random forest,
+          SVM, and gradient boosting for classification tasks. Applied feature engineering,
+          hyperparameter tuning, and model evaluation.
         </p>
         <p><strong>Tools:</strong> scikit-learn, pandas, NumPy</p>
       </div>
 
       <div class="project">
-        <h3>Text Mining & NLP Analysis of Chatbot Conversations</h3>
+        <h3>Text Mining & NLP Analysis</h3>
         <p>
-          Applied NLP techniques such as topic modeling, clustering, and NER to large
-          text datasets. Identified patterns, extracted key features, and analyzed
-          co-occurrence relationships within unstructured text data.
+          Applied NLP methods such as topic modeling, clustering, and NER to analyze
+          large text datasets. Extracted key terms, relationships, and insights from
+          unstructured text data.
         </p>
-        <p><strong>Tools:</strong> Python, NLP, text mining, topic modeling</p>
+        <p><strong>Tools:</strong> Python, NLP, topic modeling, text mining</p>
       </div>
 
       <div class="project">
         <h3>Analytics Dashboards & Reporting</h3>
         <p>
           Created interactive dashboards with Power BI to present insights from large
-          datasets. Designed visualizations for data exploration and stakeholder reports.
+          datasets. Designed visuals for business and academic reporting.
         </p>
         <p><strong>Tools:</strong> Power BI, DAX, dashboard design</p>
       </div>
-
     </div>
   </section>
 
-  <!-- CONTACT -->
+  <!-- CONTACT SECTION -->
   <section id="contact" class="section">
     <div class="container">
       <h2>Contact</h2>
-      <p>If you would like to connect or collaborate, feel free to reach out:</p>
-      <p><strong>Email:</strong> <a href="mailto:youremail@example.com">ha.razavi1993@yahoo.com</a></p>
-      <p><strong>GitHub:</strong> <a href="https://github.com/HamedRzv" target="_blank">github.com/hamed-razavi</a></p>
-      <p><strong>LinkedIn:</strong> <a href="#" target="_blank">https://www.linkedin.com/in/hamed-razavi/</a></p>
+
+      <p class="section-intro">
+        If you’d like to connect or collaborate, feel free to send me a message.
+      </p>
+
+      <div class="contact-card">
+        <form class="contact-form">
+          <div>
+            <label class="label" for="first-name">First Name</label>
+            <input type="text" id="first-name" name="first-name" placeholder="First name" />
+          </div>
+
+          <div>
+            <label class="label" for="last-name">Last Name</label>
+            <input type="text" id="last-name" name="last-name" placeholder="Last name" />
+          </div>
+
+          <div class="full-width">
+            <label class="label" for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com" />
+          </div>
+
+          <div class="full-width">
+            <label class="label" for="message">Comment</label>
+            <textarea id="message" name="message" placeholder="Write your message here..."></textarea>
+          </div>
+
+          <div class="contact-submit full-width">
+            <button type="submit">Send Message</button>
+          </div>
+        </form>
+
+        <p class="contact-note">
+          Note: This form is static. To receive messages, connect it to Formspree, Getform, or your backend.
+        </p>
+      </div>
     </div>
   </section>
-  </main>
 
   <!-- FOOTER -->
   <footer>
     <div class="container">
-      <small>© <span id="year"></span> Hamed Razavi</small>
+      <small>© <span id="year"></span> Hamed (Hem) Razavi</small>
     </div>
   </footer>
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
+
 </body>
 </html>
-
-
