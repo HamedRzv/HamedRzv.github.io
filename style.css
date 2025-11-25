@@ -1,22 +1,22 @@
 /* ===========================
-   Light Data/ML Portfolio Theme
+   Dark Data/ML Portfolio Theme
    =========================== */
 
 :root {
-  --bg: #f4f4f5;
-  --bg-soft: #eef2ff;
-  --surface: #ffffff;
-  --surface-soft: #f9fafb;
-  --accent-purple: #7c3aed;
-  --accent-purple-soft: rgba(124, 58, 237, 0.08);
-  --accent-red: #ef4444;
-  --text-main: #111827;
-  --text-soft: #6b7280;
-  --border-subtle: #e5e7eb;
+  --bg: #020617;
+  --bg-soft: #020617;
+  --surface: #020617;
+  --surface-soft: #02081b;
+  --accent-purple: #a855f7;
+  --accent-purple-soft: rgba(168, 85, 247, 0.15);
+  --accent-red: #f97373;
+  --text-main: #e5e7eb;
+  --text-soft: #9ca3af;
+  --border-subtle: #1f2937;
   --radius-lg: 14px;
   --radius-xl: 22px;
-  --shadow-soft: 0 18px 40px rgba(15, 23, 42, 0.08);
-  --shadow-card: 0 16px 35px rgba(15, 23, 42, 0.09);
+  --shadow-soft: 0 24px 60px rgba(15, 23, 42, 1);
+  --shadow-card: 0 18px 45px rgba(15, 23, 42, 1);
 }
 
 /* Reset */
@@ -35,11 +35,11 @@ body {
     sans-serif;
   line-height: 1.7;
   color: var(--text-main);
-  background:
-    radial-gradient(circle at top left, #e0f2fe 0, transparent 45%),
-    radial-gradient(circle at bottom right, #f5d0fe 0, transparent 50%),
-    var(--bg);
   min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, #1f2937 0, transparent 45%),
+    radial-gradient(circle at bottom right, #111827 0, transparent 55%),
+    #020617;
 }
 
 /* Layout helper */
@@ -56,10 +56,10 @@ header {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(255, 255, 255, 0.92);
-  backdrop-filter: blur(16px);
-  border-bottom: 1px solid rgba(229, 231, 235, 0.9);
-  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+  background: rgba(15, 23, 42, 0.96);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid rgba(31, 41, 55, 0.9);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.9);
 }
 
 header .container {
@@ -69,16 +69,16 @@ header .container {
   padding: 0.75rem 0.1rem;
 }
 
-/* Left: logo/title */
+/* Logo / name (bigger) */
 .logo {
-  font-size: 1.1rem;
-  font-weight: 600;
-  letter-spacing: 0.07em;
+  font-size: 1.4rem; /* bigger name */
+  font-weight: 650;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--accent-purple);
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.55rem;
 }
 
 .logo::before {
@@ -86,21 +86,21 @@ header .container {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 2.1rem;
-  height: 2.1rem;
+  width: 2.3rem;
+  height: 2.3rem;
   border-radius: 999px;
-  background: radial-gradient(circle at 20% 0%, #a855f7, #f9fafb);
-  color: #ffffff;
-  font-size: 0.8rem;
-  border: 1px solid rgba(148, 163, 184, 0.7);
-  box-shadow: 0 10px 25px rgba(148, 163, 184, 0.7);
+  background: radial-gradient(circle at 20% 0%, #a855f7, #020617 70%);
+  color: #f9fafb;
+  font-size: 0.9rem;
+  border: 1px solid rgba(148, 163, 184, 0.8);
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.9);
 }
 
-/* Middle: nav links */
+/* Nav */
 nav {
   display: flex;
   gap: 1rem;
-  font-size: 0.88rem;
+  font-size: 0.9rem;
 }
 
 nav a {
@@ -115,20 +115,17 @@ nav a::after {
   content: "";
   position: absolute;
   left: 0;
-  bottom: -0.15rem;
+  bottom: -0.18rem;
   width: 0%;
   height: 2px;
   border-radius: 999px;
-  background: linear-gradient(
-    90deg,
-    var(--accent-red),
-    var(--accent-purple)
-  );
+  background: linear-gradient(90deg, var(--accent-red), var(--accent-purple));
+  box-shadow: 0 0 10px rgba(248, 113, 113, 0.5);
   transition: width 0.2s ease;
 }
 
 nav a:hover {
-  color: var(--accent-purple);
+  color: #f9fafb;
   transform: translateY(-1px);
 }
 
@@ -136,7 +133,7 @@ nav a:hover::after {
   width: 100%;
 }
 
-/* Right: social icons */
+/* Social icons */
 .social-icons {
   display: flex;
   gap: 0.4rem;
@@ -150,10 +147,10 @@ nav a:hover::after {
   align-items: center;
   justify-content: center;
   font-size: 0.95rem;
-  background: #ffffff;
+  background: #020617;
   border: 1px solid var(--border-subtle);
   color: var(--accent-purple);
-  box-shadow: 0 6px 18px rgba(148, 163, 184, 0.55);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.8);
   transition: transform 0.18s ease, box-shadow 0.18s ease,
     background 0.18s ease, color 0.18s ease;
 }
@@ -166,10 +163,10 @@ nav a:hover::after {
     var(--accent-red)
   );
   color: #ffffff;
-  box-shadow: 0 10px 26px rgba(148, 163, 184, 0.8);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 1);
 }
 
-/* simple icon characters */
+/* Simple icon labels */
 .social-icons .icon-gh::before {
   content: "GH";
   font-size: 0.7rem;
@@ -190,7 +187,7 @@ nav a:hover::after {
    =========================== */
 
 .hero {
-  padding: 3.2rem 0 2.7rem;
+  padding: 3.3rem 0 2.8rem;
 }
 
 .hero .container {
@@ -206,17 +203,20 @@ nav a:hover::after {
   padding: 0.22rem 0.7rem;
   border-radius: 999px;
   font-size: 0.7rem;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--accent-purple);
-  background: var(--accent-purple-soft);
-  border: 1px solid rgba(196, 181, 253, 0.9);
+  background: rgba(24, 24, 27, 0.9);
+  border: 1px solid rgba(148, 163, 184, 0.7);
 }
 
-.hero h2 {
-  font-size: clamp(2.1rem, 3.2vw, 2.8rem);
-  letter-spacing: 0.02em;
-  color: var(--accent-purple);
+/* BIG hero name */
+.hero-name {
+  font-size: clamp(2.4rem, 3.6vw, 3rem);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #f9fafb;
+  text-shadow: 0 20px 40px rgba(0, 0, 0, 1);
 }
 
 .hero p {
@@ -224,18 +224,14 @@ nav a:hover::after {
   color: var(--text-soft);
 }
 
-/* underline accent bar */
+/* underline bar */
 .hero-underline {
-  width: 140px;
+  width: 160px;
   height: 3px;
-  margin-top: 0.9rem;
+  margin-top: 1rem;
   border-radius: 999px;
-  background: linear-gradient(
-    90deg,
-    var(--accent-red),
-    var(--accent-purple)
-  );
-  box-shadow: 0 0 12px rgba(239, 68, 68, 0.35);
+  background: linear-gradient(90deg, var(--accent-red), var(--accent-purple));
+  box-shadow: 0 0 18px rgba(248, 113, 113, 0.7);
 }
 
 /* ===========================
@@ -247,17 +243,18 @@ nav a:hover::after {
 }
 
 .section.alt {
-  background: rgba(255, 255, 255, 0.7);
+  background: radial-gradient(circle at top left, #020617, #02081b 55%);
 }
 
 .section h2 {
   font-size: 1.5rem;
   margin-bottom: 1rem;
   color: var(--accent-purple);
-  letter-spacing: 0.03em;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
 
-/* avoid header overlap when jumping to anchors */
+/* offset for anchor scroll */
 section[id] {
   scroll-margin-top: 4.5rem;
 }
@@ -268,7 +265,7 @@ section[id] {
 
 .project {
   position: relative;
-  background: var(--surface);
+  background: radial-gradient(circle at top, #020617, #020617 70%);
   border-radius: var(--radius-lg);
   border: 1px solid var(--border-subtle);
   padding: 1.1rem 1.2rem;
@@ -279,14 +276,13 @@ section[id] {
     border-color 0.18s ease, background 0.18s ease;
 }
 
-/* decorative corner tint */
 .project::before {
   content: "";
   position: absolute;
   inset: 0;
   background: radial-gradient(
     circle at top right,
-    rgba(239, 68, 68, 0.08),
+    rgba(248, 113, 113, 0.18),
     transparent 55%
   );
   opacity: 0;
@@ -296,9 +292,9 @@ section[id] {
 
 .project:hover {
   transform: translateY(-4px);
-  box-shadow: 0 22px 40px rgba(148, 163, 184, 0.6);
-  border-color: rgba(250, 204, 21, 0.2);
-  background: var(--surface-soft);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 1);
+  border-color: rgba(248, 113, 113, 0.7);
+  background: radial-gradient(circle at top, #020617, #020617 60%);
 }
 
 .project:hover::before {
@@ -328,13 +324,13 @@ section[id] {
    Contact Section & Form
    =========================== */
 
-#contact .section-intro {
+.section-intro {
   margin-bottom: 1rem;
   color: var(--text-soft);
 }
 
 .contact-card {
-  background: var(--surface);
+  background: #020617;
   border-radius: var(--radius-xl);
   border: 1px solid var(--border-subtle);
   padding: 1.6rem 1.5rem;
@@ -371,9 +367,9 @@ textarea {
   font-size: 0.92rem;
   font-family: inherit;
   color: var(--text-main);
-  background-color: #ffffff;
+  background-color: #020617;
   transition: border-color 0.18s ease, box-shadow 0.18s ease,
-    transform 0.1s ease;
+    transform 0.1s ease, background 0.18s ease;
 }
 
 textarea {
@@ -385,8 +381,9 @@ input:focus,
 textarea:focus {
   outline: none;
   border-color: var(--accent-purple);
-  box-shadow: 0 0 0 2px rgba(129, 140, 248, 0.25);
+  box-shadow: 0 0 0 2px rgba(168, 85, 247, 0.4);
   transform: translateY(-1px);
+  background: #020617;
 }
 
 /* submit button */
@@ -409,23 +406,22 @@ button[type="submit"] {
     var(--accent-purple),
     var(--accent-red)
   );
-  box-shadow: 0 14px 30px rgba(248, 113, 113, 0.4);
+  box-shadow: 0 16px 34px rgba(248, 113, 113, 0.6);
   transition: transform 0.15s ease, box-shadow 0.15s ease,
     filter 0.15s ease;
 }
 
 button[type="submit"]:hover {
   transform: translateY(-1px);
-  box-shadow: 0 18px 36px rgba(248, 113, 113, 0.5);
-  filter: brightness(1.03);
+  box-shadow: 0 20px 40px rgba(248, 113, 113, 0.7);
+  filter: brightness(1.05);
 }
 
 button[type="submit"]:active {
   transform: translateY(0);
-  box-shadow: 0 10px 20px rgba(248, 113, 113, 0.35);
+  box-shadow: 0 10px 22px rgba(248, 113, 113, 0.5);
 }
 
-/* Note text under form */
 .contact-note {
   margin-top: 0.7rem;
   font-size: 0.78rem;
@@ -437,7 +433,7 @@ button[type="submit"]:active {
    =========================== */
 
 footer {
-  background: rgba(255, 255, 255, 0.8);
+  background: #020617;
   border-top: 1px solid var(--border-subtle);
   padding: 1rem 0 1.4rem;
   margin-top: 2.2rem;
@@ -490,7 +486,7 @@ footer .container {
   }
 
   .hero {
-    padding-top: 2.7rem;
+    padding-top: 2.9rem;
   }
 
   .contact-card {
@@ -504,7 +500,7 @@ footer .container {
 
 @media (max-width: 480px) {
   .logo {
-    font-size: 1rem;
+    font-size: 1.2rem;
   }
 
   nav {
